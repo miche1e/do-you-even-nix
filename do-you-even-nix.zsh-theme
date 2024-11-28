@@ -2,7 +2,7 @@ LC_ALL="" LC_CTYPE="en_US.UTF-8"
 
 ### Check if properties are set, if not set the default
 
-# Icon setting.
+# Icons setting.
 DYEN_SEGMENT_SEPARATOR="${DYEN_SEGMENT_SEPARATOR:-\u25E4}" # ◤
 DYEN_STARTING_CHAR="${DYEN_STARTING_CHAR:-\u25E2}"         # ◢
 DYEN_PROMPT_CHAR="${DYEN_PROMPT_CHAR:-\u21C1 }"            # ⇁
