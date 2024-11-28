@@ -6,23 +6,23 @@ This theme express his full potential if you often rely on Nix's features such a
 ## Appearence
 This is how the theme will look like:
 - normally;
-![normal](https://i.sstatic.net/8McHQYTK.png)
+![normal](https://raw.githubusercontent.com/miche1e/do-you-even-nix/refs/heads/main/pics/normal.png)
 
 - when you enter a directory with a git repo. 
-![git-repo-clean](https://i.sstatic.net/8McHQYTK.png)
+![git-repo-clean](https://raw.githubusercontent.com/miche1e/do-you-even-nix/refs/heads/main/pics/git-repo-clean.png)
 Note how the current git user is shown. This come handy when you have multiple remote repository's accounts like me and you are tired of committing stuff under the wrong user 😤;
 
 - when you have something to commit;
-![git-repo-dirty](https://i.sstatic.net/8McHQYTK.png)
+![git-repo-dirty](https://raw.githubusercontent.com/miche1e/do-you-even-nix/refs/heads/main/pics/git-repo-dirty.png)
 
 - when there's a *flake.nix* in the current directory;
-![nix-flake-available](https://i.sstatic.net/8McHQYTK.png)
+![nix-flake-available](https://raw.githubusercontent.com/miche1e/do-you-even-nix/refs/heads/main/pics/nix-flake-available.png)
 
 - when there's a *shell.nix* in the current directory;
-![git-shell-available](https://i.sstatic.net/8McHQYTK.png)
+![git-shell-available](https://raw.githubusercontent.com/miche1e/do-you-even-nix/refs/heads/main/pics/git-shell-available.png)
 
 - when you enter a nix shell.
-![nix-shell-active](https://i.sstatic.net/8McHQYTK.png)
+![nix-shell-active](https://raw.githubusercontent.com/miche1e/do-you-even-nix/refs/heads/main/pics/nix-shell-active.png)
 This will activate when `$IN_NIX_SHELL` env variable is valued. As you can see there's also the shell name. You can assign the shell name to `pkgs.mkShell.name` if you like. If you don't it'll fall back to the default shell name *nix-shell-env* ("-env" is by default added by nix to the shell name).
 
 ## Installation
@@ -55,7 +55,7 @@ programs.zsh = {
 If oh-my-zsh is handling your plugins and themes.
 1. Download* the theme file in in oh-my-zsh theme's folder:
 ```bash
-wget 'https://path-to-theme-raw-file' -O $ZSH/themes/do-you-even-nix.zsh-theme
+wget 'https://raw.githubusercontent.com/miche1e/do-you-even-nix/refs/heads/main/do-you-even-nix.zsh-theme' -O $ZSH/themes/do-you-even-nix.zsh-theme
 ```
 *If you don't have wget, using curl or cloning the whole project with git and moving the file manually will do the same.
 
