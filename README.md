@@ -7,7 +7,7 @@ This is how the theme will look like:
 ![normal](https://raw.githubusercontent.com/miche1e/do-you-even-nix/refs/heads/main/pics/normal.png)
 - when you enter a directory with a git repo. 
 ![git-repo-clean](https://raw.githubusercontent.com/miche1e/do-you-even-nix/refs/heads/main/pics/git-repo-clean.png)
-Note how the current git user is shown. This come handy when you have multiple remote repository's accounts like me and you are tired of committing stuff under the wrong user 😤;
+Note how the current git user is shown. This comes handy when you have multiple remote repository's accounts like me and you are tired of committing stuff under the wrong user 😤;
 - when you have something to commit;
 ![git-repo-dirty](https://raw.githubusercontent.com/miche1e/do-you-even-nix/refs/heads/main/pics/git-repo-dirty.png)
 - when there's a *flake.nix* in the current directory;
@@ -49,7 +49,7 @@ wget 'https://raw.githubusercontent.com/miche1e/do-you-even-nix/refs/heads/main/
 ```
 *If you don't have wget, using curl or cloning the whole project with git and moving the file manually will do the same.
 
-2. Open your `~/.zshrc` file, look for the `ZSH_THEME` variable ad set it as follows:
+2. Open your `~/.zshrc` file, look for the `ZSH_THEME` variable and set it as follows:
 ```bash
 ZSH_THEME=do-you-even-nix
 ```
@@ -65,7 +65,7 @@ echo 'if [[ -f "$HOME/.zsh/plugins/do-you-even-nix/do-you-even-nix.zsh-theme" ]]
 fi' >> ~/.zshrc
 ```
 ## Personalization
-do-you-even-nix have a bunch of variables where special chars and colors are defined. These variables, if not already set, falls back to a default value that you can look up in the theme's file. If you don't like how it looks you can override them to your preference in your `~/.zshrc` __before__ sourcing the theme's file.
+do-you-even-nix have a bunch of variables where special chars and colors are defined. These variables, if not already set, fall back to a default value that you can look up in the theme's file. If you don't like how it looks you can override them to your preference in your `~/.zshrc` __before__ sourcing the theme's file.
 ```shell
 # Icons setting.
 DYEN_SEGMENT_SEPARATOR
