@@ -1,3 +1,4 @@
+#!/bin/sh
 LC_ALL="" LC_CTYPE="en_US.UTF-8"
 
 ### Check if properties are set, if not set the default
@@ -9,8 +10,11 @@ DYEN_PROMPT_CHAR="${DYEN_PROMPT_CHAR:-\u21C1 }"            # ⇁
 DYEN_BRANCH_ICON="${DYEN_BRANCH_ICON:-\ue0a0}"             # 
 DYEN_FLAKE_ICON="${DYEN_FLAKE_ICON:-\u2744\uFE0F }"        # ❄️
 DYEN_SHELL_ICON="${DYEN_SHELL_ICON:-\U1f41a}"              # 🐚
+DYEN_SSH_ICON="${DYEN_SSH_ICON:-\U1f511}"                  # 🔑
 
 # Color settings
+DYEN_SSH_BG="${DYEN_SSH_BG:-236}"
+DYEN_SSH_FG="${DYEN_SSH_FG:-196}"
 DYEN_CONTEXT_BG="${DYEN_CONTEXT_BG:-92}"
 DYEN_CONTEXT_FG="${DYEN_CONTEXT_FG:-15}"
 DYEN_DIR_BG="${DYEN_DIR_BG:-196}"
@@ -62,13 +66,16 @@ prompt_end() {
 
 ### Prompts components.
 
+# Ssh: show if is connected through ssh.
+prompt_ssh() {
+  if [[ -n "$SSH_CONNECTION" ]]; then
+    prompt_segment $DYEN_SSH_BG $DYEN_SSH_FG " [SSH]$DYEN_SSH_ICON "
+  fi
+}
+
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
-  local user=`whoami`
-
-  if [[ "$user" != "$DEFAULT_USER" || -n "$SSH_CONNECTION" ]]; then
-    prompt_segment $DYEN_CONTEXT_BG $DYEN_CONTEXT_FG " %(!.%{%F{red}%}.)$user@%m "
-  fi
+  prompt_segment $DYEN_CONTEXT_BG $DYEN_CONTEXT_FG " $(whoami)@%m "
 }
 
 # Dir: current working directory
@@ -120,6 +127,7 @@ nix_shell() {
 }
 
 build_prompt() {
+  prompt_ssh
   prompt_context
   prompt_dir
   nix_shell
@@ -128,5 +136,5 @@ build_prompt() {
 }
 
 # Customize the prompt
+setopt PROMPT_SUBST
 PROMPT='$(build_prompt)'
-# PROMPT=''
