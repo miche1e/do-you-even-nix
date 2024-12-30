@@ -87,7 +87,7 @@ prompt_dir() {
 git_branch() {
   (( $+commands[git] )) || return
   local user branch repo_path dirty bg_color fg_color mode
-  branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+  branch=$(git rev-parse --abbrev-ref --symbolic-full-name HEAD 2>/dev/null)
   repo_path=$(git rev-parse --git-dir 2>/dev/null)
   dirty=$(git status --porcelain --ignore-submodules 2> /dev/null)
   user=$(git config user.name 2> /dev/null)
@@ -108,6 +108,10 @@ git_branch() {
     mode=" >R>"
   fi
 
+  if [[ "$branch" = "HEAD" ]]; then
+    branch="DETATCHED!"
+  fi
+
   [[ -n "$branch" ]] && [[ -n "$user" ]] && prompt_segment $bg_color $fg_color " $user on $DYEN_BRANCH_ICON $branch$mode "
 }
 
@@ -120,7 +124,7 @@ nix_shell() {
   [[ -n $name ]] && shell_name="$name" || shell_name="nix-shell-env"
   [[ -n "$IN_NIX_SHELL" ]] && info="$info $shell_name" && bg_color=$DYEN_ACTIVE_SHELL_BG && fg_color=$DYEN_ACTIVE_SHELL_FG
   [[ -f "flake.nix" ]] && info="$info $DYEN_FLAKE_ICON"
-  [[ -f "shell.nix" ]] && info="$info $DYEN_SHELL_ICON"
+  [[ -f "shell.nix" ]] || [[ -f "default.nix" ]] && info="$info $DYEN_SHELL_ICON"
   if [[ -n $info ]]; then
     prompt_segment $bg_color $fg_color "$info "
   fi
