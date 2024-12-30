@@ -35,8 +35,8 @@ programs.zsh = {
   src = pkgs.fetchFromGitHub {
     owner = "miche1e";
     repo = "do-you-even-nix";
-    rev = "v1.0.0";
-    sha256 = "yXQ0YoO+6vebxjzDoH96Jk3IsABs4jMG4ZU9RmLt9u4=";
+    rev = "v1.0.1";
+    sha256 = "n9QYjpXlGdLx6agwp14rwcc6Jr5+0E/2h/oMuFsveHA=";
   };
 }
 ```
@@ -74,8 +74,11 @@ DYEN_PROMPT_CHAR
 DYEN_BRANCH_ICON
 DYEN_FLAKE_ICON
 DYEN_SHELL_ICON
+DYEN_SSH_ICON
 
 # Color settings
+DYEN_SSH_BG
+DYEN_SSH_FG
 DYEN_CONTEXT_BG
 DYEN_CONTEXT_FG
 DYEN_DIR_BG
