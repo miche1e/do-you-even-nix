@@ -17,6 +17,8 @@ Note how the current git user is shown. This comes handy when you have multiple 
 - when you enter a nix shell.
 ![nix-shell-active](https://raw.githubusercontent.com/miche1e/do-you-even-nix/refs/heads/main/pics/nix-shell-active.png)
 This will activate when `$IN_NIX_SHELL` env variable is valued. As you can see there's also the shell name. You can assign the shell name to `pkgs.mkShell.name` if you like. If you don't it'll fall back to the default shell name *nix-shell-env* ("-env" is by default added by nix to the shell name).
+- when you open an ssh session.
+![nix-shell-active](https://raw.githubusercontent.com/miche1e/do-you-even-nix/refs/heads/main/pics/ssh.png)
 ## Installation
 ### The Nix way 🗿
 1. Find where you defined zsh settings in your nix configuration files (could be either in your *configuration.nix* or in your *home.nix* if you're using home-manager). It will look something like this:
